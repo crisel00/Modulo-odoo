@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <act_window id="prueba_contacto_action" name="contacto"
+      res_model="prueba_contacto"/>
+
+    <record id="prueba_dato_view_tree" model="ir.ui.view">
+      <field name="name">Lista de contacto</field>
+      <field name="model">prueba_contacto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="correo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="prueba_contacto_view_search" model="ir.ui.view">
+      <field name="name">Buscar datos</field>
+      <field name="model">prueba_contacto</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="nombre"/>
+          <field name="correo"/>
+        </search>
+      </field>
+    </record>
+
+    <menuitem name="Contactos" id="menu_contacto" sequence="10"/>
+    <menuitem name="Inicio" id="menu_inicio" sequence="10"/>
+    <menuitem name="Dato" id="menu_contactos" action="prueba_contacto_action" parent="menu_inicio" sequence="10"/>
+  </data>
+</odoo>
